@@ -59,7 +59,7 @@ fuse7z_destroy (void *_data)
 }
 
 int
-fuse7z_getattr (const char *path, FUSE_STAT *stbuf)
+fuse7z_getattr (const char *path, struct stat *stbuf)
 {
     Fuse7z *data = get_data();
 
