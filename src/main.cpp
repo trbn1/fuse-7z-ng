@@ -219,6 +219,7 @@ main (int argc, char **argv)
     }
 
     struct fuse_operations fuse7z_oper;
+    memset(&fuse7z_oper, 0, sizeof(struct fuse_operations));
     fuse7z_oper.init = fuse7z_init;
     fuse7z_oper.destroy = fuse7z_destroy;
     fuse7z_oper.readdir = fuse7z_readdir;
