@@ -148,7 +148,8 @@ if(WINDOWS)
     file(GLOB_RECURSE win_syslog_sources "${win_syslog_dir}/*.cpp" "${win_syslog_dir}/*.c")
 endif(WINDOWS)
 
-set(lib7zip_lib "${lib7zip_binDir}/lib7zip.a")
+set(lib7zip_lib "/usr/lib/lib7zip.so")
+set(lib7zip_includeDir "/usr/include")
 message(STATUS "lib7zip lib is ${lib7zip_lib}")
 message(STATUS "lib7zip include dir is ${lib7zip_includeDir}")
 
