@@ -175,12 +175,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     
     if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mcet -fsanitize=cfi")
-    endif()
-    set_target_properties(fuse_7z_ng PROPERTIES LINK_FLAGS "-Wl,-O1,--sort-common,--as-needed,--dynamicbase,--nxcompat,--export-all-symbols,-flto")
-    
-    if(CMAKE_SIZEOF_VOID_P EQUAL 8)
-        set_target_properties(fuse_7z_ng PROPERTIES LINK_FLAGS "-Wl,--image-base,0x140000000")
-    endif()
+    endif()    
 elseif(MSVC)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /sdl /GS /SafeSEH /NXCOMPAT /dynamicbase /guard:cf /HIGHENTROPYVA")
     set_target_properties(fuse_7z_ng PROPERTIES LINK_FLAGS "/guard:cf")
